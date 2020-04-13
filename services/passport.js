@@ -1,5 +1,6 @@
 const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
+// const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const GoogleStrategy = require('passport-google-oauth2').Strategy;
 const mongoose = require('mongoose');
 const keys = require('../config/keys');
 
@@ -21,6 +22,7 @@ passport.use(
       callbackURL: '/auth/google/callback',
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
+      // userProfileURL: 'https://www.googleapis.com/oauth2/v3/userinfo',
       proxy: true
     },
     async (accessToken, refreshToken, profile, done) => {

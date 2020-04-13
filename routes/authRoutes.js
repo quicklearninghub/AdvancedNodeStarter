@@ -5,6 +5,7 @@ module.exports = app => {
     '/auth/google',
     passport.authenticate('google', {
       scope: ['profile', 'email']
+      // scope: ['https://www.googleapis.com/auth/userinfo.profile']
     })
   );
 
